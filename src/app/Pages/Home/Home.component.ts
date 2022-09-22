@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from 'src/app/services/order/Order.service';
 
 @Component({
   selector: 'app-Home',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./Home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+ 
+ 
+  //constructor for Home component
+  // injecting a orderservice on constructing an instance of the component
+  constructor(private order:OrderService) {}
+
+  foodData = <any>[];
 
   ngOnInit() {
-    console.log('home');
+    this.foodData = this.order.foodDetails;
   }
 }

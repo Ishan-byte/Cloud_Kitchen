@@ -13,11 +13,13 @@ import { HomeComponent } from './Pages/Home/Home.component';
 import { MenuComponent } from './Pages/Menu/Menu.component';
 import { AboutComponent } from './Pages/About/About.component';
 import { ContactComponent } from './Pages/contact/contact.component';
+import { MenuPagesComponent } from './Pages/MenuPages/MenuPages.component';
 
 // Routes
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'menu', component: MenuComponent },
+  { path: 'menu/:id', component: MenuPagesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
 ];
@@ -32,6 +34,7 @@ const routes: Routes = [
     MenuComponent,
     AboutComponent,
     ContactComponent,
+    MenuPagesComponent
   ],
   bootstrap: [AppComponent],
 })

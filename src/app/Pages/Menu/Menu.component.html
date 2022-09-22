@@ -1,3 +1,14 @@
-<p>
-  Menu works!
-</p>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let food of foodData">
+      <div class="food-box mt-3 mb-3">
+        <img src="{{food.foodImg}}" />
+        <h1>{{food.foodName}}</h1>
+        <p>{{food.foodDetails}}</p>
+        <p>{{food.foodPrice | currency: 'INR'}}</p>
+        <br />
+        <a class="buybutton" [routerLink]="['/menu', food.id]">Buy Now &nbsp;<i class="bi bi-bag"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
